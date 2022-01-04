@@ -1,5 +1,7 @@
 body {
+    color: black;
     background-color: black;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 #container {
@@ -18,15 +20,14 @@ body {
 }
 
 div {
-    border-style: solid;
-    border-color: black;
     border-radius: 10px;
     padding: 10px;
+    text-align: right;
+    text-align: bottom;
 }
 
 #display {
     grid-area: display;
-    color: black;
     background-color: cornsilk;
 }
 

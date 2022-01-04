@@ -37,3 +37,11 @@ function operate (operator, a, b) {
 operate('-', 10, 2);
 
 console.log(ans)
+
+function displaySeven() {
+    const display = document.querySelector('#display');
+    const seven = document.createElement('div')
+    seven.classList.add('seven');
+    seven.textContent = '7';
+    display.appendChild(seven);
+}
