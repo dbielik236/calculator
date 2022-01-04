@@ -1,6 +1,10 @@
+body {
+    background-color: black;
+}
+
 #container {
     display: grid;
-    
+    gap: 10px;
     grid-template-areas: 
     "display display display display"
     "clear clear clear divide"
@@ -11,17 +15,19 @@
     ;
     height: 800px;
     width: 400px;
-
 }
 
 div {
     border-style: solid;
+    border-color: black;
     border-radius: 10px;
     padding: 10px;
 }
 
 #display {
     grid-area: display;
+    color: black;
+    background-color: cornsilk;
 }
 
 #clear {
@@ -30,6 +36,7 @@ div {
 
 #divide {
     grid-area: divide;
+    
 }
 
 #seven {
@@ -46,6 +53,7 @@ div {
 
 #multiply {
     grid-area: multiplication;
+    
 }
 
 #four {
@@ -98,4 +106,16 @@ div {
 
 #equals {
     grid-area: equals;
+}
+
+#divide, #multiply, #plus, #minus, #equals{
+    background-color: yellow;
+}
+
+#one, #two, #three, #four, #five, #six, #seven, #eight, #nine, #zer0 {
+    background-color: grey;
+}
+
+#clear {
+    background-color: darkgrey;
 }
