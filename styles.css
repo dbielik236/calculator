@@ -1,0 +1,101 @@
+#container {
+    display: grid;
+    
+    grid-template-areas: 
+    "display display display display"
+    "clear clear clear divide"
+    "seven eight nine multiplication"
+    "four five six minus"
+    "one two three plus"
+    "zer0 zer0 . equals"
+    ;
+    height: 800px;
+    width: 400px;
+
+}
+
+div {
+    border-style: solid;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+#display {
+    grid-area: display;
+}
+
+#clear {
+    grid-area: clear;
+}
+
+#divide {
+    grid-area: divide;
+}
+
+#seven {
+    grid-area: seven;
+}
+
+#eight {
+    grid-area: eight;
+}
+
+#nine {
+    grid-area: nine;
+}
+
+#multiply {
+    grid-area: multiplication;
+}
+
+#four {
+    grid-area: four;
+}
+
+#five {
+    grid-area: five;
+}
+
+#six {
+    grid-area: six;
+}
+
+#minus {
+    grid-area: minus;
+}
+
+#one {
+    grid-area: one;
+}
+
+#two {
+    grid-area: two;
+}
+
+#three {
+    grid-area: three;
+}
+
+#plus {
+    grid-area: plus;
+}
+
+#one {
+    grid-area: one;
+}
+
+#two {
+    grid-area: two;
+}
+
+#three {
+    grid-area: three;
+}
+
+#zer0 {
+    grid-area: zer0;
+}
+
+#equals {
+    grid-area: equals;
+}
