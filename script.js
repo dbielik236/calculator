@@ -1,5 +1,5 @@
-let operator = '+';
-let a = 4;
+let operator;
+let a;
 let b = 2;
 
 function displaySeven() {
@@ -12,7 +12,7 @@ function displaySeven() {
 }
 
 function getMultiply () {
-    
+    return operator = '*'
 }
 
 function getDivide () {
@@ -68,8 +68,16 @@ function operate (operator, a, b) {
 }
 const equals = document.querySelector('#equals');
 equals.addEventListener('click', () => {
-    console.log(operate(operator, a, b));
-    
+    operate(operator, a, b);
+    console.log(ans);
+    const display = document.querySelector('#display');
+    const answer = document.createElement('div')
+    answer.classList.add('solution');
+    answer.textContent = ans;
+    display.appendChild(answer);
+
+    const remove = document.querySelector('.seven');
+    display.removeChild(remove);
 });
 
 

@@ -120,3 +120,6 @@ div {
     background-color: darkgrey;
 }
 
+div:hover {
+    background-color: green;
+}
