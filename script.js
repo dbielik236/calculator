@@ -1,6 +1,6 @@
 let operator = '+';
-let a = 5;
-let b = 3;
+let a = 4;
+let b = 2;
 
 function displaySeven() {
     const display = document.querySelector('#display');
@@ -8,6 +8,7 @@ function displaySeven() {
     seven.classList.add('seven');
     seven.textContent = 7;
     display.appendChild(seven);
+    return a = 7;
 }
 
 function getMultiply () {
@@ -65,7 +66,10 @@ function operate (operator, a, b) {
         return ans;
     }
 }
+const equals = document.querySelector('#equals');
+equals.addEventListener('click', () => {
+    console.log(operate(operator, a, b));
+    
+});
 
-operate(operator, a, 2);
 
-console.log(ans)
