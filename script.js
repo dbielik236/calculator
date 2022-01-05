@@ -8,6 +8,10 @@ function displaySeven() {
     seven.classList.add('seven');
     seven.textContent = 7;
     display.appendChild(seven);
+    
+    const remove = document.querySelector('.spacer');
+    display.removeChild(remove);
+    
     return a = 7;
 }
 

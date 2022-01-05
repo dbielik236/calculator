@@ -19,6 +19,10 @@ body {
     width: 350px;
 }
 
+.spacer {
+    color: cornsilk;
+}
+
 div {
     border-radius: 10px;
     padding: 10px;
@@ -120,6 +124,3 @@ div {
     background-color: darkgrey;
 }
 
-div:hover {
-    background-color: green;
-}
