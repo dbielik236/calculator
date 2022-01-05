@@ -1,6 +1,6 @@
 let operator;
 let a;
-let b = 2;
+let b;
 
 function displaySeven() {
     const display = document.querySelector('#display');
@@ -13,6 +13,19 @@ function displaySeven() {
     display.removeChild(remove);
     
     return a = 7;
+}
+
+function displayFour() {
+    const display = document.querySelector('#display');
+    const four = document.createElement('div')
+    four.classList.add('four');
+    four.textContent = 4;
+    display.appendChild(four);
+    
+    const removeSeven = document.querySelector('.seven');
+    display.removeChild(removeSeven);
+
+    return b = 4;
 }
 
 function getMultiply () {
@@ -70,18 +83,34 @@ function operate (operator, a, b) {
         return ans;
     }
 }
+
 const equals = document.querySelector('#equals');
 equals.addEventListener('click', () => {
     operate(operator, a, b);
     console.log(ans);
     const display = document.querySelector('#display');
     const answer = document.createElement('div')
-    answer.classList.add('solution');
+    answer.classList.add('answer');
     answer.textContent = ans;
     display.appendChild(answer);
 
-    const remove = document.querySelector('.seven');
+    const remove = document.querySelector('.four');
     display.removeChild(remove);
 });
 
+
+
+const clear = document.querySelector('#clear');
+clear.addEventListener('click', () => {
+    const display = document.querySelector('#display');
+
+    const answer = document.querySelector('.answer');
+    display.removeChild(answer);
+
+   
+    const spacer = document.createElement('div')
+    spacer.classList.add('spacer');
+    spacer.textContent = 'spacer';
+    display.appendChild(spacer);
+});
 
