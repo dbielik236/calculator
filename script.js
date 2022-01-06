@@ -1,27 +1,34 @@
+let storedValues = {
+    number: "25",
+    operator: "+",
+}
+
 let operator;
-let a;
-let b;
+let a = 5;
+
+
+
+let number;
 
 function displayNumber (number) {    
     const div = document.createElement('aside');
     div.classList.add('number')
     div.textContent = number;
     display.appendChild(div);
-    return number;
 }
 
 function getSeven() {
-    const number = 7;
-    displayNumber(number);
+    displayNumber(7);
+    return number = 7;
 }
 
 function getFour() {
-    const number = 4;
-    displayNumber(number);
+    displayNumber(4);
+    return number = 4;
 }
 
 function getMultiply () {
-    return operator = '*'
+    return operator = '*';
 }
 
 function getDivide () {
@@ -36,76 +43,63 @@ function getAdd () {
     return operator = '+'
 }
 
-function add (a, b) {
-    return ans=a+b;
+function add (a, number) {
+    return ans=a+number;
 }
 
-function subtract (a, b) {
-    return ans=a-b;
+function subtract (a, number) {
+    return ans=a-number;
 }
 
-function multiply (a, b) {
-    return ans=a*b
+function multiply (a, number) {
+    return ans=a*number
 }
 
-function divide (a, b) {
-    return ans=a/b;
+function divide (a, number) {
+    return ans=a/number;
 }
 
-function operate (operator, a, b) {
+function operate (operator, a, number) {
     if (operator=='+') {
-        add(a, b)
+        add(a, number)
         return ans;
     }
     else if (operator=='-') {
-        subtract(a, b)
+        subtract(a, number)
         return ans;
     }
     else if (operator=='*') {
-        multiply(a, b)
+        multiply(a, number)
         return ans;
     }
     if (operator=='/') {
-        divide(a, b)
+        divide(a, number)
         return ans;
     }
 }
 
 const equals = document.querySelector('#equals');
 equals.addEventListener('click', () => {
-    operate(operator, a, b);
+    console.log (operate(operator, a, number));
     
     const display = document.querySelector('#display');
     const answer = document.createElement('aside')
     answer.classList.add('answer');
     answer.textContent = ans;
     display.appendChild(answer);
-
-    const remove = document.querySelector('.number');
-    display.removeChild(remove);
+    
 });
 
-
+//this current function on removes one number at a time and doesn't remove answer
 function clearDisplay() {
     const display = document.querySelector('#display');
     const div = document.querySelector('.number');
     if (div) {  
         display.removeChild(div);
     }
+
 }
 
+function storeValues () {
 
-
-
-/*
-//This doesn't work right yet
-function removeNodes() {
-    const contents = document.querySelector('#display');
-    const number = document.querySelector('aside');
-    contents.forEach((number) => {
-    contents.removeChild(number);
-    });
-    
-    
 }
-*/
