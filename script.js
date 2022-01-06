@@ -19,32 +19,6 @@ function getFour() {
     const number = 4;
     displayNumber(number);
 }
-/*
-function displaySeven() {
-    
-    const seven = document.createElement('div')
-    seven.classList.add('seven');
-    seven.textContent = 7;
-    display.appendChild(seven);
-    
-    const spacer = document.querySelector('.spacer');
-    display.removeChild(spacer);
-    return a = 7;
-}
-*/
-
-function displayFour() {
-    const display = document.querySelector('#display');
-    const four = document.createElement('aside')
-    four.classList.add('four');
-    four.textContent = 4;
-    display.appendChild(four);
-    
-    const removeSeven = document.querySelector('.seven');
-    display.removeChild(removeSeven);
-
-    return b = 4;
-}
 
 function getMultiply () {
     return operator = '*'
@@ -107,17 +81,31 @@ equals.addEventListener('click', () => {
     answer.textContent = ans;
     display.appendChild(answer);
 
-    const remove = document.querySelector('.four');
+    const remove = document.querySelector('.number');
     display.removeChild(remove);
 });
 
 
-
-const clear = document.querySelector('#clear');
-clear.addEventListener('click', () => {
+function clearDisplay() {
     const display = document.querySelector('#display');
-});
-
-function removeNodes() {
-
+    const div = document.querySelector('.number');
+    if (div) {  
+        display.removeChild(div);
+    }
 }
+
+
+
+
+/*
+//This doesn't work right yet
+function removeNodes() {
+    const contents = document.querySelector('#display');
+    const number = document.querySelector('aside');
+    contents.forEach((number) => {
+    contents.removeChild(number);
+    });
+    
+    
+}
+*/
