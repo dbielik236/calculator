@@ -2,22 +2,40 @@ let operator;
 let a;
 let b;
 
+function displayNumber (number) {    
+    const div = document.createElement('aside');
+    div.classList.add('number')
+    div.textContent = number;
+    display.appendChild(div);
+    return number;
+}
+
+function getSeven() {
+    const number = 7;
+    displayNumber(number);
+}
+
+function getFour() {
+    const number = 4;
+    displayNumber(number);
+}
+/*
 function displaySeven() {
-    const display = document.querySelector('#display');
+    
     const seven = document.createElement('div')
     seven.classList.add('seven');
     seven.textContent = 7;
     display.appendChild(seven);
     
-    const remove = document.querySelector('.spacer');
-    display.removeChild(remove);
-    
+    const spacer = document.querySelector('.spacer');
+    display.removeChild(spacer);
     return a = 7;
 }
+*/
 
 function displayFour() {
     const display = document.querySelector('#display');
-    const four = document.createElement('div')
+    const four = document.createElement('aside')
     four.classList.add('four');
     four.textContent = 4;
     display.appendChild(four);
@@ -33,20 +51,15 @@ function getMultiply () {
 }
 
 function getDivide () {
-
+    return operator = '/'
 }
 
 function getSubtract () {
-
+    return operator = '-'
 }
 
 function getAdd () {
-
-}
-
-function getEquals () {
-    const equals = document.querySelector('#equals');
-    
+    return operator = '+'
 }
 
 function add (a, b) {
@@ -87,9 +100,9 @@ function operate (operator, a, b) {
 const equals = document.querySelector('#equals');
 equals.addEventListener('click', () => {
     operate(operator, a, b);
-    console.log(ans);
+    
     const display = document.querySelector('#display');
-    const answer = document.createElement('div')
+    const answer = document.createElement('aside')
     answer.classList.add('answer');
     answer.textContent = ans;
     display.appendChild(answer);
@@ -103,14 +116,8 @@ equals.addEventListener('click', () => {
 const clear = document.querySelector('#clear');
 clear.addEventListener('click', () => {
     const display = document.querySelector('#display');
-
-    const answer = document.querySelector('.answer');
-    display.removeChild(answer);
-
-   
-    const spacer = document.createElement('div')
-    spacer.classList.add('spacer');
-    spacer.textContent = 'spacer';
-    display.appendChild(spacer);
 });
 
+function removeNodes() {
+
+}
