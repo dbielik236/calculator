@@ -1,20 +1,20 @@
+let operator;
+let number;
+
 let storedValues = {
-    number: "25",
-    operator: "+",
+    firstNumber: 5,
+    secondNumber: 2,
 }
 
-let operator;
-let a = 5;
 
 
-
-let number;
 
 function displayNumber (number) {    
     const div = document.createElement('aside');
     div.classList.add('number')
     div.textContent = number;
     display.appendChild(div);
+    
 }
 
 function getSeven() {
@@ -28,7 +28,9 @@ function getFour() {
 }
 
 function getMultiply () {
+    storedValues();
     return operator = '*';
+
 }
 
 function getDivide () {
@@ -42,6 +44,10 @@ function getSubtract () {
 function getAdd () {
     return operator = '+'
 }
+
+
+a = storedValues.firstNumber;
+
 
 function add (a, number) {
     return ans=a+number;
@@ -80,7 +86,7 @@ function operate (operator, a, number) {
 
 const equals = document.querySelector('#equals');
 equals.addEventListener('click', () => {
-    console.log (operate(operator, a, number));
+    operate(operator, a, number);
     
     const display = document.querySelector('#display');
     const answer = document.createElement('aside')
@@ -100,6 +106,5 @@ function clearDisplay() {
 
 }
 
-function storeValues () {
 
-}
+
