@@ -1,13 +1,5 @@
-let operator;
 let number;
-
-let storedValues = {
-    firstNumber: 5,
-    secondNumber: 2,
-}
-
-
-
+let storedValues;
 
 function displayNumber (number) {    
     const div = document.createElement('aside');
@@ -16,77 +8,110 @@ function displayNumber (number) {
     display.appendChild(div);
     
 }
-
-function getSeven() {
-    displayNumber(7);
-    return number = 7;
+function getOne() {
+    displayNumber(1);
+    return number = 1;
 }
-
+function getTwo() {
+    displayNumber(2);
+    return number = 2;
+}
+function getThree() {
+    displayNumber(3);
+    return number = 3;
+}
 function getFour() {
     displayNumber(4);
     return number = 4;
 }
+function getFive() {
+    displayNumber(5);
+    return number = 5;
+}
+function getSix() {
+    displayNumber(6);
+    return number = 6;
+}
+function getSeven() {
+    displayNumber(7);
+    return number = 7;
+}
+function getEight() {
+    displayNumber(8);
+    return number = 8;
+}
+function getNine() {
+    displayNumber(9);
+    return number = 9;
+}
+function getZero() {
+    displayNumber(0);
+    return number = 0;
+}
 
 function getMultiply () {
-    storedValues();
-    return operator = '*';
-
+    return storedValues = {
+        firstNumber: number,
+        operator: '*',
+        }
 }
-
 function getDivide () {
-    return operator = '/'
+    return storedValues = {
+        firstNumber: number,
+        operator: '/',
+        }
 }
-
 function getSubtract () {
-    return operator = '-'
+    return storedValues = {
+        firstNumber: number,
+        operator: '-',
+        }
 }
-
 function getAdd () {
-    return operator = '+'
+    return storedValues = {
+        firstNumber: number,
+        operator: '+',
+        }
 }
 
-
-a = storedValues.firstNumber;
-
-
-function add (a, number) {
-    return ans=a+number;
+function add (firstNumber, number) {
+    return ans=firstNumber+number;
 }
 
-function subtract (a, number) {
-    return ans=a-number;
+function subtract (firstNumber, number) {
+    return ans=firstNumber-number;
 }
 
-function multiply (a, number) {
-    return ans=a*number
+function multiply (firstNumber, number) {
+    return ans=firstNumber*number;
 }
 
-function divide (a, number) {
-    return ans=a/number;
+function divide (firstNumber, number) {
+    return ans=firstNumber/number;
 }
 
-function operate (operator, a, number) {
+function operate (operator, firstNumber, number) {
     if (operator=='+') {
-        add(a, number)
+        add(firstNumber, number)
         return ans;
     }
     else if (operator=='-') {
-        subtract(a, number)
+        subtract(firstNumber, number)
         return ans;
     }
     else if (operator=='*') {
-        multiply(a, number)
+        multiply(firstNumber, number)
         return ans;
     }
     if (operator=='/') {
-        divide(a, number)
+        divide(firstNumber, number)
         return ans;
     }
 }
 
 const equals = document.querySelector('#equals');
 equals.addEventListener('click', () => {
-    operate(operator, a, number);
+    operate(storedValues.operator, storedValues.firstNumber, number);
     
     const display = document.querySelector('#display');
     const answer = document.createElement('aside')
