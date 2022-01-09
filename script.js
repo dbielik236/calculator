@@ -124,11 +124,10 @@ equals.addEventListener('click', () => {
 //this current function on removes one number at a time and doesn't remove answer
 function clearDisplay() {
     const display = document.querySelector('#display');
-    const div = document.querySelector('.number');
-    if (div) {  
-        display.removeChild(div);
+    const aside = document.querySelector('aside');
+    if (aside) {  
+        display.removeChild(aside);
     }
-
 }
 
 
