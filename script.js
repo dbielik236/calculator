@@ -9,42 +9,52 @@ function displayNumber (number) {
     
 }
 function getOne() {
+    clearDisplay();
     displayNumber(1);
     return number = 1;
 }
 function getTwo() {
+    clearDisplay();
     displayNumber(2);
     return number = 2;
 }
 function getThree() {
+    clearDisplay();
     displayNumber(3);
     return number = 3;
 }
 function getFour() {
+    clearDisplay();
     displayNumber(4);
     return number = 4;
 }
 function getFive() {
+    clearDisplay();
     displayNumber(5);
     return number = 5;
 }
 function getSix() {
+    clearDisplay();
     displayNumber(6);
     return number = 6;
 }
 function getSeven() {
+    clearDisplay();
     displayNumber(7);
     return number = 7;
 }
 function getEight() {
+    clearDisplay();
     displayNumber(8);
     return number = 8;
 }
 function getNine() {
+    clearDisplay();
     displayNumber(9);
     return number = 9;
 }
 function getZero() {
+    clearDisplay();
     displayNumber(0);
     return number = 0;
 }
@@ -111,6 +121,7 @@ function operate (operator, firstNumber, number) {
 
 const equals = document.querySelector('#equals');
 equals.addEventListener('click', () => {
+    clearDisplay();
     operate(storedValues.operator, storedValues.firstNumber, number);
     
     const display = document.querySelector('#display');
@@ -121,7 +132,6 @@ equals.addEventListener('click', () => {
     
 });
 
-//this current function on removes one number at a time and doesn't remove answer
 function clearDisplay() {
     const display = document.querySelector('#display');
     const aside = document.querySelector('aside');
