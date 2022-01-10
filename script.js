@@ -2,12 +2,20 @@ let number;
 let storedValues;
 
 function displayNumber (number) {    
+    const display = document.querySelector('#display');
+    let node = document.createTextNode (number);
+    display.appendChild(node);
+}
+
+/* OLD DISPLAY BY CREATING A DIV
+function displayNumber (number) {    
     const div = document.createElement('aside');
     div.classList.add('number')
     div.textContent = number;
     display.appendChild(div);
-    
 }
+*/
+
 function getOne() {
     clearDisplay();
     displayNumber(1);
@@ -87,15 +95,12 @@ function getAdd () {
 function add (firstNumber, number) {
     return ans=firstNumber+number;
 }
-
 function subtract (firstNumber, number) {
     return ans=firstNumber-number;
 }
-
 function multiply (firstNumber, number) {
     return ans=firstNumber*number;
 }
-
 function divide (firstNumber, number) {
     return ans=firstNumber/number;
 }
@@ -123,6 +128,14 @@ const equals = document.querySelector('#equals');
 equals.addEventListener('click', () => {
     clearDisplay();
     operate(storedValues.operator, storedValues.firstNumber, number);
+    displayNumber(ans);  
+});
+
+/* OLD ONE CREATES A DIV
+const equals = document.querySelector('#equals');
+equals.addEventListener('click', () => {
+    clearDisplay();
+    operate(storedValues.operator, storedValues.firstNumber, number);
     
     const display = document.querySelector('#display');
     const answer = document.createElement('aside')
@@ -131,7 +144,16 @@ equals.addEventListener('click', () => {
     display.appendChild(answer);
     
 });
+*/
 
+function clearDisplay() {
+    const display = document.querySelector('#display');
+    while(display.firstChild) {
+        display.removeChild(display.firstChild);
+    }
+}
+
+/* OLD ONE REMOVES DIV
 function clearDisplay() {
     const display = document.querySelector('#display');
     const aside = document.querySelector('aside');
@@ -139,6 +161,6 @@ function clearDisplay() {
         display.removeChild(aside);
     }
 }
-
+*/
 
 
