@@ -1,7 +1,18 @@
-let number;
 let storedValues;
+let number = '';
 
-function displayNumber (number) {    
+function storeValues (number, operator) {
+  return storedValues = {
+    firstNumber: number,
+    operator: operator, 
+  }
+}
+
+function resetNumber () {
+  return number = '';
+}
+
+function displayNumber (number) {
     const display = document.querySelector('#display');
     let node = document.createTextNode (number);
     display.appendChild(node);
@@ -17,91 +28,113 @@ function displayNumber (number) {
 */
 
 function getOne() {
-    clearDisplay();
+    if (number==='') {
+      clearDisplay()
+    }
     displayNumber(1);
-    return number = 1;
+    return number += '1';
 }
 function getTwo() {
-    clearDisplay();
+    if (number==='') {
+      clearDisplay()
+    }
     displayNumber(2);
-    return number = 2;
+    return number += '2';
 }
 function getThree() {
-    clearDisplay();
+    if (number==='') {
+      clearDisplay()
+    }
     displayNumber(3);
-    return number = 3;
+    return number += '3';
 }
 function getFour() {
-    clearDisplay();
+    if (number==='') {
+      clearDisplay()
+    }
     displayNumber(4);
-    return number = 4;
+    return number += '4';
 }
 function getFive() {
-    clearDisplay();
+    if (number==='') {
+      clearDisplay()
+    }
     displayNumber(5);
-    return number = 5;
+    return number += '5';
 }
 function getSix() {
-    clearDisplay();
+    if (number==='') {
+      clearDisplay()
+    }
     displayNumber(6);
-    return number = 6;
+    return number += '6';
 }
 function getSeven() {
-    clearDisplay();
+    if (number==='') {
+      clearDisplay()
+    }
     displayNumber(7);
-    return number = 7;
+    return number += '7';
 }
 function getEight() {
-    clearDisplay();
+    if (number==='') {
+      clearDisplay()
+    }
     displayNumber(8);
-    return number = 8;
+    return number += '8';
 }
 function getNine() {
-    clearDisplay();
+    if (number==='') {
+      clearDisplay()
+    }
     displayNumber(9);
-    return number = 9;
+    return number += '9';
 }
 function getZero() {
-    clearDisplay();
+    if (number==='') {
+      clearDisplay()
+    }
     displayNumber(0);
-    return number = 0;
+    return number += '0';
 }
 
 function getMultiply () {
-    return storedValues = {
-        firstNumber: number,
-        operator: '*',
-        }
+    storeValues(number, '*');
+    resetNumber();
 }
 function getDivide () {
-    return storedValues = {
-        firstNumber: number,
-        operator: '/',
-        }
+    storeValues(number, '/');
+    resetNumber();
 }
 function getSubtract () {
-    return storedValues = {
-        firstNumber: number,
-        operator: '-',
-        }
+    
+    storeValues(number, '-');
+    resetNumber();
 }
 function getAdd () {
-    return storedValues = {
-        firstNumber: number,
-        operator: '+',
-        }
+    
+    storeValues(number, '+');
+    resetNumber();
 }
 
 function add (firstNumber, number) {
+    const parsed = parseInt(number);
+    clearDisplay();
     return ans=firstNumber+number;
 }
 function subtract (firstNumber, number) {
+    const parsed = parseInt(number);
+  clearDisplay();
     return ans=firstNumber-number;
 }
 function multiply (firstNumber, number) {
+    const parsed = parseInt(number);
+  clearDisplay();
     return ans=firstNumber*number;
 }
 function divide (firstNumber, number) {
+    const parsed = parseInt(number);
+  clearDisplay();
     return ans=firstNumber/number;
 }
 
@@ -126,9 +159,12 @@ function operate (operator, firstNumber, number) {
 
 const equals = document.querySelector('#equals');
 equals.addEventListener('click', () => {
-    clearDisplay();
+    
+    console.log(storedValues.firstNumber, number);
+    
     operate(storedValues.operator, storedValues.firstNumber, number);
-    displayNumber(ans);  
+    displayNumber(ans);
+    resetNumber();
 });
 
 /* OLD ONE CREATES A DIV
@@ -147,20 +183,9 @@ equals.addEventListener('click', () => {
 */
 
 function clearDisplay() {
+    resetNumber ();
     const display = document.querySelector('#display');
     while(display.firstChild) {
         display.removeChild(display.firstChild);
     }
 }
-
-/* OLD ONE REMOVES DIV
-function clearDisplay() {
-    const display = document.querySelector('#display');
-    const aside = document.querySelector('aside');
-    if (aside) {  
-        display.removeChild(aside);
-    }
-}
-*/
-
-
