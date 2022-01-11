@@ -121,6 +121,7 @@ function getZero() {
 function getMultiply () {
     storeValues(number, '*');
     resetNumber();
+      
 }
 function getDivide () {
     storeValues(number, '/');
@@ -137,27 +138,35 @@ function getAdd () {
   resetNumber();
 }
 
+function getDecimal () {
+  if (number===''||number == ans) {
+    return number +='0.'
+  }
+  displayNumber('.');
+  return number += '.';
+}
+
 function add (firstNumber, number) {
-  const parsed = parseInt(number);
-  const first = parseInt(firstNumber);
+  const parsed = parseFloat(number);
+  const first = parseFloat(firstNumber);
   clearDisplay();
     return ans=first+parsed;
 }
 function subtract (firstNumber, number) {
-  const parsed = parseInt(number);
-  const first = parseInt(firstNumber);
+  const parsed = parseFloat(number);
+  const first = parseFloat(firstNumber);
   clearDisplay();
     return ans=first-parsed;
 }
 function multiply (firstNumber, number) {
-  const parsed = parseInt(number);
-  const first = parseInt(firstNumber);
+  const parsed = parseFloat(number);
+  const first = parseFloat(firstNumber);
   clearDisplay();
     return ans=first*parsed;
 }
 function divide (firstNumber, number) {
-  const parsed = parseInt(number);
-  const first = parseInt(firstNumber);
+  const parsed = parseFloat(number);
+  const first = parseFloat(firstNumber);
   clearDisplay();
     return ans=first/parsed;
 }

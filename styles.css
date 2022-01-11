@@ -13,7 +13,7 @@ body {
     "seven eight nine multiplication"
     "four five six minus"
     "one two three plus"
-    "zer0 zer0 . equals"
+    "zer0 zer0 dec equals"
     ;
     height: 600px;
     width: 350px;
@@ -109,6 +109,10 @@ div {
     grid-area: zer0;
 }
 
+#decimal {
+    grid-area: dec;
+}
+
 #equals {
     grid-area: equals;
 }
@@ -117,7 +121,7 @@ div {
     background-color: yellow;
 }
 
-#one, #two, #three, #four, #five, #six, #seven, #eight, #nine, #zer0 {
+#one, #two, #three, #four, #five, #six, #seven, #eight, #nine, #zer0, #decimal {
     background-color: grey;
 }
 
