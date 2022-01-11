@@ -139,8 +139,11 @@ function getAdd () {
 }
 
 function getDecimal () {
-  if (number===''||number == ans) {
-    return number +='0.'
+  if (number==''||number == ans) {
+    clearDisplay();
+    resetNumber();
+    displayNumber('0.');
+    return number += '.';
   }
   displayNumber('.');
   return number += '.';
