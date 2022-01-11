@@ -20,6 +20,10 @@ function resetNumber () {
   return number = '';
 }
 
+function resetAnswer () {
+  return ans = '';
+}
+
 function displayNumber (number) {
     const display = document.querySelector('#display');
     let node = document.createTextNode (number);
@@ -39,7 +43,7 @@ function getOne() {
     if (number===''||number == ans) {
       clearDisplay();
       resetNumber();
-      
+      resetAnswer();
     }
     displayNumber(1);
     return number += '1';
@@ -49,7 +53,7 @@ function getTwo() {
     if (number===''||number==ans) {
       clearDisplay();
       resetNumber();
-      
+      resetAnswer();
     }
     displayNumber(2);
     return number += '2';
@@ -58,6 +62,7 @@ function getThree() {
     if (number===''||number == ans) {
       clearDisplay();
       resetNumber();
+      resetAnswer();
     }
     displayNumber(3);
     return number += '3';
@@ -66,6 +71,7 @@ function getFour() {
     if (number===''||number == ans) {
       clearDisplay();
       resetNumber();
+      resetAnswer();
     }
     displayNumber(4);
     return number += '4';
@@ -74,15 +80,17 @@ function getFive() {
     if (number===''||number == ans) {
       clearDisplay();
       resetNumber();
+      resetAnswer();
     }
     displayNumber(5);
     return number += '5';
 }
 function getSix() {
-    if (number===''||number == ans) {
+  if (number===''||number == ans) {
       clearDisplay();
       resetNumber();
-    }
+      resetAnswer();
+  }
     displayNumber(6);
     return number += '6';
 }
@@ -90,6 +98,7 @@ function getSeven() {
     if (number===''||number == ans) {
       clearDisplay();
       resetNumber();
+      resetAnswer();
     }
     displayNumber(7);
     return number += '7';
@@ -98,6 +107,7 @@ function getEight() {
     if (number===''||number == ans) {
       clearDisplay();
       resetNumber();
+      resetAnswer();
     }
     displayNumber(8);
     return number += '8';
@@ -106,6 +116,7 @@ function getNine() {
     if (number===''||number == ans) {
       clearDisplay();
       resetNumber();
+      resetAnswer();
     }
     displayNumber(9);
     return number += '9';
