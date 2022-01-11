@@ -150,7 +150,10 @@ function getAdd () {
 }
 
 function getDecimal () {
-  if (number==''||number == ans) {
+  if (number.includes('.')) {
+    return
+  }
+  else if (number==''||number == ans) {
     clearDisplay();
     resetNumber();
     displayNumber('0.');
@@ -206,7 +209,7 @@ function operate (operator, firstNumber, number) {
 
 const equals = document.querySelector('#equals');
 equals.addEventListener('click', () => {
-    if (storedValues.operator) {
+    if (storedValues.operator, storedValues.firstNumber, number) {
     
     operate(storedValues.operator, storedValues.firstNumber, number);
     displayNumber(ans);
