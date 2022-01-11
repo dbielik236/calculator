@@ -153,19 +153,19 @@ function add (firstNumber, number) {
   const parsed = parseFloat(number);
   const first = parseFloat(firstNumber);
   clearDisplay();
-    return ans=first+parsed;
+    return ans=(first*10+parsed*10)/10;
 }
 function subtract (firstNumber, number) {
   const parsed = parseFloat(number);
   const first = parseFloat(firstNumber);
   clearDisplay();
-    return ans=first-parsed;
+    return ans=(first*10-parsed*10)/10;
 }
 function multiply (firstNumber, number) {
   const parsed = parseFloat(number);
   const first = parseFloat(firstNumber);
   clearDisplay();
-    return ans=first*parsed;
+    return ans=(first*10*parsed*10)/100;
 }
 function divide (firstNumber, number) {
   const parsed = parseFloat(number);
