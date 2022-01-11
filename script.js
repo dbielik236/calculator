@@ -36,7 +36,7 @@ function displayNumber (number) {
 */
 
 function getOne() {
-    if (number==='') {
+    if (number===''||number == ans) {
       clearDisplay();
       resetNumber();
       
@@ -45,7 +45,8 @@ function getOne() {
     return number += '1';
 }
 function getTwo() {
-    if (number==='') {
+
+    if (number===''||number==ans) {
       clearDisplay();
       resetNumber();
       
@@ -54,7 +55,7 @@ function getTwo() {
     return number += '2';
 }
 function getThree() {
-    if (number==='') {
+    if (number===''||number == ans) {
       clearDisplay();
       resetNumber();
     }
@@ -62,7 +63,7 @@ function getThree() {
     return number += '3';
 }
 function getFour() {
-    if (number==='') {
+    if (number===''||number == ans) {
       clearDisplay();
       resetNumber();
     }
@@ -70,7 +71,7 @@ function getFour() {
     return number += '4';
 }
 function getFive() {
-    if (number==='') {
+    if (number===''||number == ans) {
       clearDisplay();
       resetNumber();
     }
@@ -78,7 +79,7 @@ function getFive() {
     return number += '5';
 }
 function getSix() {
-    if (number==='') {
+    if (number===''||number == ans) {
       clearDisplay();
       resetNumber();
     }
@@ -86,7 +87,7 @@ function getSix() {
     return number += '6';
 }
 function getSeven() {
-    if (number==='') {
+    if (number===''||number == ans) {
       clearDisplay();
       resetNumber();
     }
@@ -94,7 +95,7 @@ function getSeven() {
     return number += '7';
 }
 function getEight() {
-    if (number==='') {
+    if (number===''||number == ans) {
       clearDisplay();
       resetNumber();
     }
@@ -102,7 +103,7 @@ function getEight() {
     return number += '8';
 }
 function getNine() {
-    if (number==='') {
+    if (number===''||number == ans) {
       clearDisplay();
       resetNumber();
     }
@@ -110,9 +111,8 @@ function getNine() {
     return number += '9';
 }
 function getZero() {
-    if (number==='') {
-      clearDisplay();
-      resetNumber();
+    if (number===''||number == ans) {
+      return
     }
     displayNumber(0);
     return number += '0';
@@ -184,12 +184,10 @@ function operate (operator, firstNumber, number) {
 const equals = document.querySelector('#equals');
 equals.addEventListener('click', () => {
     if (storedValues.operator) {
-    console.log(storedValues.firstNumber, number);
+    
     operate(storedValues.operator, storedValues.firstNumber, number);
     displayNumber(ans);
     resetStoredValues();
-    
-    console.log(ans);
     return number = ans;
     }
     
