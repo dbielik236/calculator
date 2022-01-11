@@ -1,10 +1,18 @@
 let storedValues;
 let number = '';
+let ans;
 
 function storeValues (number, operator) {
   return storedValues = {
     firstNumber: number,
     operator: operator, 
+  }
+}
+
+function resetStoredValues () {
+    return storedValues = {
+    firstNumber: null,
+    operator: null,
   }
 }
 
@@ -29,70 +37,82 @@ function displayNumber (number) {
 
 function getOne() {
     if (number==='') {
-      clearDisplay()
+      clearDisplay();
+      resetNumber();
+      
     }
     displayNumber(1);
     return number += '1';
 }
 function getTwo() {
     if (number==='') {
-      clearDisplay()
+      clearDisplay();
+      resetNumber();
+      
     }
     displayNumber(2);
     return number += '2';
 }
 function getThree() {
     if (number==='') {
-      clearDisplay()
+      clearDisplay();
+      resetNumber();
     }
     displayNumber(3);
     return number += '3';
 }
 function getFour() {
     if (number==='') {
-      clearDisplay()
+      clearDisplay();
+      resetNumber();
     }
     displayNumber(4);
     return number += '4';
 }
 function getFive() {
     if (number==='') {
-      clearDisplay()
+      clearDisplay();
+      resetNumber();
     }
     displayNumber(5);
     return number += '5';
 }
 function getSix() {
     if (number==='') {
-      clearDisplay()
+      clearDisplay();
+      resetNumber();
     }
     displayNumber(6);
     return number += '6';
 }
 function getSeven() {
     if (number==='') {
-      clearDisplay()
+      clearDisplay();
+      resetNumber();
     }
     displayNumber(7);
     return number += '7';
 }
 function getEight() {
     if (number==='') {
-      clearDisplay()
+      clearDisplay();
+      resetNumber();
     }
     displayNumber(8);
     return number += '8';
 }
 function getNine() {
     if (number==='') {
-      clearDisplay()
+      clearDisplay();
+      resetNumber();
     }
     displayNumber(9);
     return number += '9';
 }
 function getZero() {
     if (number==='') {
-      clearDisplay()
+      clearDisplay();
+      resetNumber();
     }
     displayNumber(0);
     return number += '0';
@@ -112,6 +132,7 @@ function getSubtract () {
     resetNumber();
 }
 function getAdd () {
+  
   storeValues(number, 'plus');
   resetNumber();
 }
@@ -123,48 +144,55 @@ function add (firstNumber, number) {
     return ans=first+parsed;
 }
 function subtract (firstNumber, number) {
-    const parsed = parseInt(number);
+  const parsed = parseInt(number);
+  const first = parseInt(firstNumber);
   clearDisplay();
-    return ans=firstNumber-number;
+    return ans=first-parsed;
 }
 function multiply (firstNumber, number) {
-    const parsed = parseInt(number);
+  const parsed = parseInt(number);
+  const first = parseInt(firstNumber);
   clearDisplay();
-    return ans=firstNumber*number;
+    return ans=first*parsed;
 }
 function divide (firstNumber, number) {
-    const parsed = parseInt(number);
+  const parsed = parseInt(number);
+  const first = parseInt(firstNumber);
   clearDisplay();
-    return ans=firstNumber/number;
+    return ans=first/parsed;
 }
 
 function operate (operator, firstNumber, number) {
     if (operator=='plus') {
       add(firstNumber, number)
-      return ans;
+      
     }
     else if (operator=='-') {
         subtract(firstNumber, number)
-        return ans;
+        
     }
     else if (operator=='*') {
         multiply(firstNumber, number)
-        return ans;
+        
     }
     else if (operator=='/') {
         divide(firstNumber, number)
-        return ans;
+        
     }
 }
 
 const equals = document.querySelector('#equals');
 equals.addEventListener('click', () => {
-    
-    
-    
+    if (storedValues.operator) {
+    console.log(storedValues.firstNumber, number);
     operate(storedValues.operator, storedValues.firstNumber, number);
     displayNumber(ans);
-    resetNumber();
+    resetStoredValues();
+    
+    console.log(ans);
+    return number = ans;
+    }
+    
 });
 
 /* OLD ONE CREATES A DIV
