@@ -112,15 +112,15 @@ function getSubtract () {
     resetNumber();
 }
 function getAdd () {
-    
-    storeValues(number, '+');
-    resetNumber();
+  storeValues(number, 'plus');
+  resetNumber();
 }
 
 function add (firstNumber, number) {
-    const parsed = parseInt(number);
-    clearDisplay();
-    return ans=firstNumber+number;
+  const parsed = parseInt(number);
+  const first = parseInt(firstNumber);
+  clearDisplay();
+    return ans=first+parsed;
 }
 function subtract (firstNumber, number) {
     const parsed = parseInt(number);
@@ -139,9 +139,9 @@ function divide (firstNumber, number) {
 }
 
 function operate (operator, firstNumber, number) {
-    if (operator=='+') {
-        add(firstNumber, number)
-        return ans;
+    if (operator=='plus') {
+      add(firstNumber, number)
+      return ans;
     }
     else if (operator=='-') {
         subtract(firstNumber, number)
@@ -151,7 +151,7 @@ function operate (operator, firstNumber, number) {
         multiply(firstNumber, number)
         return ans;
     }
-    if (operator=='/') {
+    else if (operator=='/') {
         divide(firstNumber, number)
         return ans;
     }
@@ -160,7 +160,7 @@ function operate (operator, firstNumber, number) {
 const equals = document.querySelector('#equals');
 equals.addEventListener('click', () => {
     
-    console.log(storedValues.firstNumber, number);
+    
     
     operate(storedValues.operator, storedValues.firstNumber, number);
     displayNumber(ans);
