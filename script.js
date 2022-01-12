@@ -30,15 +30,6 @@ function displayNumber (number) {
     display.appendChild(node);
 }
 
-/* OLD DISPLAY BY CREATING A DIV
-function displayNumber (number) {    
-    const div = document.createElement('aside');
-    div.classList.add('number')
-    div.textContent = number;
-    display.appendChild(div);
-}
-*/
-
 function getOne() {
     if (number===''||number == ans) {
       clearDisplay();
@@ -150,15 +141,16 @@ function getAdd () {
 }
 
 function getDecimal () {
-  if (number.includes('.')) {
-    return
-  }
-  else if (number==''||number == ans) {
+  if (number==''||number == ans) {
     clearDisplay();
     resetNumber();
     displayNumber('0.');
     return number += '.';
   }
+  else if (number.includes('.')) {
+    return
+  }
+  else 
   displayNumber('.');
   return number += '.';
 }
@@ -179,7 +171,7 @@ function multiply (firstNumber, number) {
   const parsed = parseFloat(number);
   const first = parseFloat(firstNumber);
   clearDisplay();
-    return ans=(first*10*parsed*10)/100;
+    return ans=((first*10)/10)*((parsed*10)/10);
 }
 function divide (firstNumber, number) {
   const parsed = parseFloat(number);
@@ -209,30 +201,20 @@ function operate (operator, firstNumber, number) {
 
 const equals = document.querySelector('#equals');
 equals.addEventListener('click', () => {
-    if (storedValues.operator, storedValues.firstNumber, number) {
-    
+    if (storedValues.firstNumber&&number) {
     operate(storedValues.operator, storedValues.firstNumber, number);
-    displayNumber(ans);
-    resetStoredValues();
-    return number = ans;
+        
+        displayNumber(ans);
+        resetStoredValues();
+        return number = ans;
     }
+    else 
     
-});
-
-/* OLD ONE CREATES A DIV
-const equals = document.querySelector('#equals');
-equals.addEventListener('click', () => {
     clearDisplay();
-    operate(storedValues.operator, storedValues.firstNumber, number);
-    
-    const display = document.querySelector('#display');
-    const answer = document.createElement('aside')
-    answer.classList.add('answer');
-    answer.textContent = ans;
-    display.appendChild(answer);
-    
+    displayNumber('syntax error');
+    resetStoredValues();
+    return
 });
-*/
 
 function clearDisplay() {
     resetNumber ();
