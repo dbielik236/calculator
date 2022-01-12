@@ -221,7 +221,12 @@ function divide (firstNumber, number) {
 }
 
 function operate (operator, firstNumber, number) {
-    if (operator=='plus') {
+    if (firstNumber==0&&number==0) {
+      clearDisplay();
+      displayNumber('Error: Division by Zero')
+      return
+    }
+    else if (operator=='plus') {
       add(firstNumber, number)
       
     }
@@ -251,7 +256,7 @@ equals.addEventListener('click', () => {
         }
         else if (ans.toString().length>17) {
           clearDisplay();
-          displayNumber('Error: Exceeds Limit');
+          displayNumber('Error: Exceeds Display');
           
         }
         else resetStoredValues();
