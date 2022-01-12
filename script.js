@@ -148,10 +148,9 @@ function getZero() {
   if (number.length>17) {
     return
   }
+  
   else if (number===''||number == ans) {
-      clearDisplay();
-      resetNumber();
-      resetAnswer();
+      return
     }
     displayNumber(0);
     return number += '0';
