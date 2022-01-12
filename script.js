@@ -2,11 +2,17 @@ let storedValues;
 let number = '';
 let ans;
 
+
+
 function storeValues (number, operator) {
   return storedValues = {
     firstNumber: number,
     operator: operator, 
   }
+}
+
+function findLength(x) {
+  return x.length;
 }
 
 function resetStoredValues () {
@@ -31,7 +37,10 @@ function displayNumber (number) {
 }
 
 function getOne() {
-    if (number===''||number == ans) {
+    if (number.length>17) {
+      return
+    }
+    else if (number===''||number == ans) {
       clearDisplay();
       resetNumber();
       resetAnswer();
@@ -40,8 +49,10 @@ function getOne() {
     return number += '1';
 }
 function getTwo() {
-
-    if (number===''||number==ans) {
+  if (number.length>17) {
+    return
+  }
+  else if (number===''||number==ans) {
       clearDisplay();
       resetNumber();
       resetAnswer();
@@ -50,7 +61,10 @@ function getTwo() {
     return number += '2';
 }
 function getThree() {
-    if (number===''||number == ans) {
+  if (number.length>17) {
+    return
+  }
+  else if (number===''||number == ans) {
       clearDisplay();
       resetNumber();
       resetAnswer();
@@ -59,7 +73,10 @@ function getThree() {
     return number += '3';
 }
 function getFour() {
-    if (number===''||number == ans) {
+  if (number.length>17) {
+    return
+  }
+  else if (number===''||number == ans) {
       clearDisplay();
       resetNumber();
       resetAnswer();
@@ -68,7 +85,10 @@ function getFour() {
     return number += '4';
 }
 function getFive() {
-    if (number===''||number == ans) {
+  if (number.length>17) {
+    return
+  }
+  else if (number===''||number == ans) {
       clearDisplay();
       resetNumber();
       resetAnswer();
@@ -77,7 +97,10 @@ function getFive() {
     return number += '5';
 }
 function getSix() {
-  if (number===''||number == ans) {
+  if (number.length>17) {
+    return
+  }
+  else if (number===''||number == ans) {
       clearDisplay();
       resetNumber();
       resetAnswer();
@@ -86,7 +109,10 @@ function getSix() {
     return number += '6';
 }
 function getSeven() {
-    if (number===''||number == ans) {
+  if (number.length>17) {
+    return
+  }
+  else if (number===''||number == ans) {
       clearDisplay();
       resetNumber();
       resetAnswer();
@@ -95,7 +121,10 @@ function getSeven() {
     return number += '7';
 }
 function getEight() {
-    if (number===''||number == ans) {
+  if (number.length>17) {
+    return
+  }
+  else if (number===''||number == ans) {
       clearDisplay();
       resetNumber();
       resetAnswer();
@@ -104,7 +133,10 @@ function getEight() {
     return number += '8';
 }
 function getNine() {
-    if (number===''||number == ans) {
+  if (number.length>17) {
+    return
+  }
+  else if (number===''||number == ans) {
       clearDisplay();
       resetNumber();
       resetAnswer();
@@ -113,7 +145,10 @@ function getNine() {
     return number += '9';
 }
 function getZero() {
-    if (number===''||number == ans) {
+  if (number.length>17) {
+    return
+  }
+  else if (number===''||number == ans) {
       clearDisplay();
       resetNumber();
       resetAnswer();
@@ -143,7 +178,10 @@ function getAdd () {
 }
 
 function getDecimal () {
-  if (number==''||number == ans) {
+  if (number.length>17) {
+    return
+  }
+  else if (number==''||number == ans) {
     clearDisplay();
     resetNumber();
     displayNumber('0.');
@@ -179,7 +217,7 @@ function divide (firstNumber, number) {
   const parsed = parseFloat(number);
   const first = parseFloat(firstNumber);
   clearDisplay();
-    return ans=first/parsed;
+  return ans=first/parsed
 }
 
 function operate (operator, firstNumber, number) {
@@ -204,14 +242,15 @@ function operate (operator, firstNumber, number) {
 const equals = document.querySelector('#equals');
 equals.addEventListener('click', () => {
     if (storedValues.firstNumber&&number) {
-    operate(storedValues.operator, storedValues.firstNumber, number);
+        operate(storedValues.operator, storedValues.firstNumber, number);
         
         displayNumber(ans);
         if (ans=='Infinity') {
           clearDisplay();
-          displayNumber('Error: Division by Zero')
+          displayNumber('Error: Division by Zero');
         }
-        resetStoredValues();
+       
+        else resetStoredValues();
         return number = ans;
     }
     else 
