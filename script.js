@@ -158,6 +158,7 @@ function getNine() {
     return number += '9';
 }
 function getZero() {
+  replaceZero();
   if (number.length>17) {
     return
   }
