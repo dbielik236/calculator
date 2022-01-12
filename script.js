@@ -249,7 +249,11 @@ equals.addEventListener('click', () => {
           clearDisplay();
           displayNumber('Error: Division by Zero');
         }
-       
+        else if (ans.toString().length>17) {
+          clearDisplay();
+          displayNumber('Error: Exceeds Limit');
+          
+        }
         else resetStoredValues();
         return number = ans;
     }
