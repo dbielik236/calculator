@@ -11,8 +11,12 @@ function storeValues (number, operator) {
   }
 }
 
-function findLength(x) {
-  return x.length;
+function replaceZero () {
+    let position = number.indexOf('0');
+    if (position==0) {
+      resetNumber();
+    }
+    else return
 }
 
 function resetStoredValues () {
@@ -37,6 +41,7 @@ function displayNumber (number) {
 }
 
 function getOne() {
+    replaceZero();
     if (number.length>17) {
       return
     }
@@ -49,6 +54,7 @@ function getOne() {
     return number += '1';
 }
 function getTwo() {
+  replaceZero()
   if (number.length>17) {
     return
   }
@@ -61,6 +67,7 @@ function getTwo() {
     return number += '2';
 }
 function getThree() {
+  replaceZero();
   if (number.length>17) {
     return
   }
@@ -73,6 +80,7 @@ function getThree() {
     return number += '3';
 }
 function getFour() {
+  replaceZero();
   if (number.length>17) {
     return
   }
@@ -85,6 +93,7 @@ function getFour() {
     return number += '4';
 }
 function getFive() {
+  replaceZero();
   if (number.length>17) {
     return
   }
@@ -97,6 +106,7 @@ function getFive() {
     return number += '5';
 }
 function getSix() {
+  replaceZero();
   if (number.length>17) {
     return
   }
@@ -109,6 +119,7 @@ function getSix() {
     return number += '6';
 }
 function getSeven() {
+  replaceZero();
   if (number.length>17) {
     return
   }
@@ -121,6 +132,7 @@ function getSeven() {
     return number += '7';
 }
 function getEight() {
+  replaceZero();
   if (number.length>17) {
     return
   }
@@ -133,6 +145,7 @@ function getEight() {
     return number += '8';
 }
 function getNine() {
+  replaceZero();
   if (number.length>17) {
     return
   }
@@ -148,10 +161,11 @@ function getZero() {
   if (number.length>17) {
     return
   }
-  
   else if (number===''||number == ans) {
-      return
-    }
+    clearDisplay();
+    resetNumber();
+    resetAnswer();
+  }
     displayNumber(0);
     return number += '0';
 }
@@ -177,6 +191,7 @@ function getAdd () {
 }
 
 function getDecimal () {
+  replaceZero();
   if (number.length>17) {
     return
   }
