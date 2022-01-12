@@ -120,13 +120,16 @@ div {
 
 #divide, #multiply, #plus, #minus, #equals{
     background-color: yellow;
+    font-size: 20px;
 }
 
 #one, #two, #three, #four, #five, #six, #seven, #eight, #nine, #zer0, #decimal {
     background-color: grey;
+    font-size: 20px
 }
 
 #clear {
     background-color: darkgrey;
+    font-size: 20px;
 }
 
