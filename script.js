@@ -114,7 +114,9 @@ function getNine() {
 }
 function getZero() {
     if (number===''||number == ans) {
-      return
+      clearDisplay();
+      resetNumber();
+      resetAnswer();
     }
     displayNumber(0);
     return number += '0';
@@ -205,13 +207,16 @@ equals.addEventListener('click', () => {
     operate(storedValues.operator, storedValues.firstNumber, number);
         
         displayNumber(ans);
+        if (ans=='Infinity') {
+          clearDisplay();
+          displayNumber('Error: Division by Zero')
+        }
         resetStoredValues();
         return number = ans;
     }
     else 
-    
     clearDisplay();
-    displayNumber('syntax error');
+    displayNumber('Error: Syntax');
     resetStoredValues();
     return
 });
