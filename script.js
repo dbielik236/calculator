@@ -213,7 +213,7 @@ function add (firstNumber, number) {
   const parsed = parseFloat(number);
   const first = parseFloat(firstNumber);
   clearDisplay();
-  return ans=((first*10)+(parsed*10))*10/100;
+  return ans=((first*10)+(parsed*10))*10000000000000000/100000000000000000;
 }
 function subtract (firstNumber, number) {
   const parsed = parseFloat(number);
