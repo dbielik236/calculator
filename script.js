@@ -42,7 +42,7 @@ function displayNumber (number) {
 
 function getOne() {
     replaceZero();
-    if (number.length>17) {
+    if (number.length>15) {
       return
     }
     else if (number===''||number == ans) {
@@ -55,7 +55,7 @@ function getOne() {
 }
 function getTwo() {
   replaceZero()
-  if (number.length>17) {
+  if (number.length>15) {
     return
   }
   else if (number===''||number==ans) {
@@ -68,7 +68,7 @@ function getTwo() {
 }
 function getThree() {
   replaceZero();
-  if (number.length>17) {
+  if (number.length>15) {
     return
   }
   else if (number===''||number == ans) {
@@ -81,7 +81,7 @@ function getThree() {
 }
 function getFour() {
   replaceZero();
-  if (number.length>17) {
+  if (number.length>15) {
     return
   }
   else if (number===''||number == ans) {
@@ -94,7 +94,7 @@ function getFour() {
 }
 function getFive() {
   replaceZero();
-  if (number.length>17) {
+  if (number.length>15) {
     return
   }
   else if (number===''||number == ans) {
@@ -107,7 +107,7 @@ function getFive() {
 }
 function getSix() {
   replaceZero();
-  if (number.length>17) {
+  if (number.length>15) {
     return
   }
   else if (number===''||number == ans) {
@@ -120,7 +120,7 @@ function getSix() {
 }
 function getSeven() {
   replaceZero();
-  if (number.length>17) {
+  if (number.length>15) {
     return
   }
   else if (number===''||number == ans) {
@@ -133,7 +133,7 @@ function getSeven() {
 }
 function getEight() {
   replaceZero();
-  if (number.length>17) {
+  if (number.length>15) {
     return
   }
   else if (number===''||number == ans) {
@@ -146,7 +146,7 @@ function getEight() {
 }
 function getNine() {
   replaceZero();
-  if (number.length>17) {
+  if (number.length>15) {
     return
   }
   else if (number===''||number == ans) {
@@ -159,7 +159,7 @@ function getNine() {
 }
 function getZero() {
   replaceZero();
-  if (number.length>17) {
+  if (number.length>15) {
     return
   }
   else if (number===''||number == ans) {
@@ -193,7 +193,7 @@ function getAdd () {
 
 function getDecimal () {
   replaceZero();
-  if (number.length>17) {
+  if (number.length>15) {
     return
   }
   else if (number==''||number == ans) {
@@ -269,11 +269,7 @@ equals.addEventListener('click', () => {
           clearDisplay();
           displayNumber('Error: Division by Zero');
         }
-        else if (ans.toString().length>17) {
-          clearDisplay();
-          displayNumber('Error: Exceeds Display');
-          
-        }
+        
         else resetStoredValues();
         return number = ans;
     }
