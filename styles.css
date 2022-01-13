@@ -34,7 +34,7 @@ div {
 #display {
     grid-area: display;
     background-color: cornsilk;
-    font-size: 28px
+    font-size: 24px
 }
 
 #clear {
