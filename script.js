@@ -12,8 +12,7 @@ function storeValues (number, operator) {
 }
 
 function replaceZero () {
-    let position = number.indexOf('0');
-    if (position==0) {
+    if (number==0) {
       resetNumber();
     }
     else return
@@ -45,7 +44,7 @@ function getOne() {
     if (number.length>15) {
       return
     }
-    else if (number===''||number == ans) {
+    else if (number==''||number==ans) {
       clearDisplay();
       resetNumber();
       resetAnswer();
@@ -54,6 +53,7 @@ function getOne() {
     return number += '1';
 }
 function getTwo() {
+  
   replaceZero()
   if (number.length>15) {
     return
@@ -62,9 +62,9 @@ function getTwo() {
       clearDisplay();
       resetNumber();
       resetAnswer();
-    }
-    displayNumber(2);
-    return number += '2';
+  }
+  displayNumber(2);
+  return number += '2';
 }
 function getThree() {
   replaceZero();
@@ -271,6 +271,7 @@ equals.addEventListener('click', () => {
         }
         
         else resetStoredValues();
+        
         return number = ans;
     }
     else 
@@ -279,6 +280,8 @@ equals.addEventListener('click', () => {
     resetStoredValues();
     return
 });
+
+
 
 function clearDisplay() {
     resetNumber ();
