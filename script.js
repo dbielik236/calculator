@@ -12,7 +12,12 @@ function storeValues (number, operator) {
 }
 
 function replaceZero () {
-    if (number==0&&number.includes('.'==false)) {
+    if (number==0&&number.includes('.')) {
+      console.log("did not reset")
+      return
+    }
+    else if (number==0) {
+      console.log("reset")
       resetNumber();
     }
     else return
