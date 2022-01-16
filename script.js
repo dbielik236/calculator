@@ -12,7 +12,7 @@ function storeValues (number, operator) {
 }
 
 function replaceZero () {
-    if (number==0) {
+    if (number==0&&number.includes('.'==false)) {
       resetNumber();
     }
     else return
